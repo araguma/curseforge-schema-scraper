@@ -19,482 +19,482 @@ Once the program is done a `curseforge.ts` file will appear in the `output` dire
 
 ```typescript
 export type CurseForgeApiResponseOfListOfMinecraftGameVersion = {
-    CurseForgedata: CurseForgeMinecraftGameVersion[]
+    data: CurseForgeMinecraftGameVersion[]
 }
 
 export type CurseForgeApiResponseOfListOfMinecraftModLoaderIndex = {
-    CurseForgedata: CurseForgeMinecraftModLoaderIndex[]
+    data: CurseForgeMinecraftModLoaderIndex[]
 }
 
 export type CurseForgeApiResponseOfMinecraftGameVersion = {
-    CurseForgedata: CurseForgeMinecraftGameVersion
+    data: CurseForgeMinecraftGameVersion
 }
 
 export type CurseForgeApiResponseOfMinecraftModLoaderVersion = {
-    CurseForgedata: CurseForgeMinecraftModLoaderVersion
+    data: CurseForgeMinecraftModLoaderVersion
 }
 
 export type CurseForgeCategory = {
-    CurseForgeid: number
-    CurseForgegameId: number
-    CurseForgename: string
-    CurseForgeslug: string
-    CurseForgeurl: string
-    CurseForgeiconUrl: string
-    CurseForgedateModified: string
-    CurseForgeisClass: boolean | null
-    CurseForgeclassId: number | null
-    CurseForgeparentCategoryId: number | null
-    CurseForgedisplayIndex: number | null
+    id: number
+    gameId: number
+    name: string
+    slug: string
+    url: string
+    iconUrl: string
+    dateModified: string
+    isClass: boolean | null
+    classId: number | null
+    parentCategoryId: number | null
+    displayIndex: number | null
 }
 
 export enum CurseForgeCoreApiStatus {
-    CurseForgePrivate = 1,
-    CurseForgePublic = 2,
+    Private = 1,
+    Public = 2,
 }
 
 export enum CurseForgeCoreStatus {
-    CurseForgeDraft = 1,
-    CurseForgeTest = 2,
-    CurseForgePendingReview = 3,
-    CurseForgeRejected = 4,
-    CurseForgeApproved = 5,
-    CurseForgeLive = 6,
+    Draft = 1,
+    Test = 2,
+    PendingReview = 3,
+    Rejected = 4,
+    Approved = 5,
+    Live = 6,
 }
 
 export type CurseForgeFeaturedModsResponse = {
-    CurseForgefeatured: CurseForgeMod[]
-    CurseForgepopular: CurseForgeMod[]
-    CurseForgerecentlyUpdated: CurseForgeMod[]
+    featured: CurseForgeMod[]
+    popular: CurseForgeMod[]
+    recentlyUpdated: CurseForgeMod[]
 }
 
 export type CurseForgeFile = {
-    CurseForgeid: number
-    CurseForgegameId: number
-    CurseForgemodId: number
-    CurseForgeisAvailable: boolean
-    CurseForgedisplayName: string
-    CurseForgefileName: string
-    CurseForgereleaseType: CurseForgeFileReleaseType
-    CurseForgefileStatus: CurseForgeFileStatus
-    CurseForgehashes: CurseForgeFileHash[]
-    CurseForgefileDate: string
-    CurseForgefileLength: number
-    CurseForgedownloadCount: number
-    CurseForgefileSizeOnDisk: number | null
-    CurseForgedownloadUrl: string
-    CurseForgegameVersions: string[]
-    CurseForgesortableGameVersions: CurseForgeSortableGameVersion[]
-    CurseForgedependencies: CurseForgeFileDependency[]
-    CurseForgeexposeAsAlternative: boolean | null
-    CurseForgeparentProjectFileId: number | null
-    CurseForgealternateFileId: number | null
-    CurseForgeisServerPack: boolean | null
-    CurseForgeserverPackFileId: number | null
-    CurseForgeisEarlyAccessContent: boolean | null
-    CurseForgeearlyAccessEndDate: string | null
-    CurseForgefileFingerprint: number
-    CurseForgemodules: CurseForgeFileModule[]
+    id: number
+    gameId: number
+    modId: number
+    isAvailable: boolean
+    displayName: string
+    fileName: string
+    releaseType: CurseForgeFileReleaseType
+    fileStatus: CurseForgeFileStatus
+    hashes: CurseForgeFileHash[]
+    fileDate: string
+    fileLength: number
+    downloadCount: number
+    fileSizeOnDisk: number | null
+    downloadUrl: string
+    gameVersions: string[]
+    sortableGameVersions: CurseForgeSortableGameVersion[]
+    dependencies: CurseForgeFileDependency[]
+    exposeAsAlternative: boolean | null
+    parentProjectFileId: number | null
+    alternateFileId: number | null
+    isServerPack: boolean | null
+    serverPackFileId: number | null
+    isEarlyAccessContent: boolean | null
+    earlyAccessEndDate: string | null
+    fileFingerprint: number
+    modules: CurseForgeFileModule[]
 }
 
 export type CurseForgeFileDependency = {
-    CurseForgemodId: number
-    CurseForgerelationType: CurseForgeFileRelationType
+    modId: number
+    relationType: CurseForgeFileRelationType
 }
 
 export type CurseForgeFileHash = {
-    CurseForgevalue: string
-    CurseForgealgo: CurseForgeHashAlgo
+    value: string
+    algo: CurseForgeHashAlgo
 }
 
 export type CurseForgeFileIndex = {
-    CurseForgegameVersion: string
-    CurseForgefileId: number
-    CurseForgefilename: string
-    CurseForgereleaseType: CurseForgeFileReleaseType
-    CurseForgegameVersionTypeId: number | null
-    CurseForgemodLoader: CurseForgeModLoaderType
+    gameVersion: string
+    fileId: number
+    filename: string
+    releaseType: CurseForgeFileReleaseType
+    gameVersionTypeId: number | null
+    modLoader: CurseForgeModLoaderType
 }
 
 export type CurseForgeFileModule = {
-    CurseForgename: string
-    CurseForgefingerprint: number
+    name: string
+    fingerprint: number
 }
 
 export enum CurseForgeFileRelationType {
-    CurseForgeEmbeddedLibrary = 1,
-    CurseForgeOptionalDependency = 2,
-    CurseForgeRequiredDependency = 3,
-    CurseForgeTool = 4,
-    CurseForgeIncompatible = 5,
-    CurseForgeInclude = 6,
+    EmbeddedLibrary = 1,
+    OptionalDependency = 2,
+    RequiredDependency = 3,
+    Tool = 4,
+    Incompatible = 5,
+    Include = 6,
 }
 
 export enum CurseForgeFileReleaseType {
-    CurseForgeRelease = 1,
-    CurseForgeBeta = 2,
-    CurseForgeAlpha = 3,
+    Release = 1,
+    Beta = 2,
+    Alpha = 3,
 }
 
 export enum CurseForgeFileStatus {
-    CurseForgeProcessing = 1,
-    CurseForgeChangesRequired = 2,
-    CurseForgeUnderReview = 3,
-    CurseForgeApproved = 4,
-    CurseForgeRejected = 5,
-    CurseForgeMalwareDetected = 6,
-    CurseForgeDeleted = 7,
-    CurseForgeArchived = 8,
-    CurseForgeTesting = 9,
-    CurseForgeReleased = 10,
-    CurseForgeReadyForReview = 11,
-    CurseForgeDeprecated = 12,
-    CurseForgeBaking = 13,
-    CurseForgeAwaitingPublishing = 14,
-    CurseForgeFailedPublishing = 15,
+    Processing = 1,
+    ChangesRequired = 2,
+    UnderReview = 3,
+    Approved = 4,
+    Rejected = 5,
+    MalwareDetected = 6,
+    Deleted = 7,
+    Archived = 8,
+    Testing = 9,
+    Released = 10,
+    ReadyForReview = 11,
+    Deprecated = 12,
+    Baking = 13,
+    AwaitingPublishing = 14,
+    FailedPublishing = 15,
 }
 
 export type CurseForgeFingerprintFuzzyMatch = {
-    CurseForgeid: number
-    CurseForgefile: CurseForgeFile
-    CurseForgelatestFiles: CurseForgeFile[]
-    CurseForgefingerprints: number[]
+    id: number
+    file: CurseForgeFile
+    latestFiles: CurseForgeFile[]
+    fingerprints: number[]
 }
 
 export type CurseForgeFingerprintFuzzyMatchResult = {
-    CurseForgefuzzyMatches: CurseForgeFingerprintFuzzyMatch[]
+    fuzzyMatches: CurseForgeFingerprintFuzzyMatch[]
 }
 
 export type CurseForgeFingerprintMatch = {
-    CurseForgeid: number
-    CurseForgefile: CurseForgeFile
-    CurseForgelatestFiles: CurseForgeFile[]
+    id: number
+    file: CurseForgeFile
+    latestFiles: CurseForgeFile[]
 }
 
 export type CurseForgeFingerprintsMatchesResult = {
-    CurseForgeisCacheBuilt: boolean
-    CurseForgeexactMatches: CurseForgeFingerprintMatch[]
-    CurseForgeexactFingerprints: number[]
-    CurseForgepartialMatches: CurseForgeFingerprintMatch[]
-    CurseForgepartialMatchFingerprints: object
-    CurseForgeadditionalProperties: number[]
-    CurseForgeinstalledFingerprints: number[]
-    CurseForgeunmatchedFingerprints: number[]
+    isCacheBuilt: boolean
+    exactMatches: CurseForgeFingerprintMatch[]
+    exactFingerprints: number[]
+    partialMatches: CurseForgeFingerprintMatch[]
+    partialMatchFingerprints: object
+    additionalProperties: number[]
+    installedFingerprints: number[]
+    unmatchedFingerprints: number[]
 }
 
 export type CurseForgeFolderFingerprint = {
-    CurseForgefoldername: string
-    CurseForgefingerprints: number[]
+    foldername: string
+    fingerprints: number[]
 }
 
 export type CurseForgeGame = {
-    CurseForgeid: number
-    CurseForgename: string
-    CurseForgeslug: string
-    CurseForgedateModified: string
-    CurseForgeassets: CurseForgeGameAssets
-    CurseForgestatus: CurseForgeCoreStatus
-    CurseForgeapiStatus: CurseForgeCoreApiStatus
+    id: number
+    name: string
+    slug: string
+    dateModified: string
+    assets: CurseForgeGameAssets
+    status: CurseForgeCoreStatus
+    apiStatus: CurseForgeCoreApiStatus
 }
 
 export type CurseForgeGameAssets = {
-    CurseForgeiconUrl: string
-    CurseForgetileUrl: string
-    CurseForgecoverUrl: string
+    iconUrl: string
+    tileUrl: string
+    coverUrl: string
 }
 
 export type CurseForgeGameVersion = {
-    CurseForgeid: number
-    CurseForgeslug: string
-    CurseForgename: string
+    id: number
+    slug: string
+    name: string
 }
 
 export type CurseForgeGameVersionsByType = {
-    CurseForgetype: number
-    CurseForgeversions: string[]
+    type: number
+    versions: string[]
 }
 
 export type CurseForgeGameVersionsByType2 = {
-    CurseForgetype: number
-    CurseForgeversions: CurseForgeGameVersion[]
+    type: number
+    versions: CurseForgeGameVersion[]
 }
 
 export enum CurseForgeGameVersionStatus {
-    CurseForgeApproved = 1,
-    CurseForgeDeleted = 2,
-    CurseForgeNew = 3,
+    Approved = 1,
+    Deleted = 2,
+    New = 3,
 }
 
 export type CurseForgeGameVersionType = {
-    CurseForgeid: number
-    CurseForgegameId: number
-    CurseForgename: string
-    CurseForgeslug: string
-    CurseForgeisSyncable: boolean
-    CurseForgestatus: CurseForgeGameVersionTypeStatus
+    id: number
+    gameId: number
+    name: string
+    slug: string
+    isSyncable: boolean
+    status: CurseForgeGameVersionTypeStatus
 }
 
 export enum CurseForgeGameVersionTypeStatus {
-    CurseForgeNormal = 1,
-    CurseForgeDeleted = 2,
+    Normal = 1,
+    Deleted = 2,
 }
 
 export type CurseForgeGetCategoriesResponse = {
-    CurseForgedata: CurseForgeCategory[]
+    data: CurseForgeCategory[]
 }
 
 export type CurseForgeGetFeaturedModsResponse = {
-    CurseForgedata: CurseForgeFeaturedModsResponse
+    data: CurseForgeFeaturedModsResponse
 }
 
 export type CurseForgeGetFilesResponse = {
-    CurseForgedata: CurseForgeFile[]
+    data: CurseForgeFile[]
 }
 
 export type CurseForgeGetFingerprintMatchesResponse = {
-    CurseForgedata: CurseForgeFingerprintsMatchesResult
+    data: CurseForgeFingerprintsMatchesResult
 }
 
 export type CurseForgeGetFingerprintsFuzzyMatchesResponse = {
-    CurseForgedata: CurseForgeFingerprintFuzzyMatchResult
+    data: CurseForgeFingerprintFuzzyMatchResult
 }
 
 export type CurseForgeGetGameResponse = {
-    CurseForgedata: CurseForgeGame
+    data: CurseForgeGame
 }
 
 export type CurseForgeGetGamesResponse = {
-    CurseForgedata: CurseForgeGame[]
-    CurseForgepagination: CurseForgePagination
+    data: CurseForgeGame[]
+    pagination: CurseForgePagination
 }
 
 export type CurseForgeGetModFileResponse = {
-    CurseForgedata: CurseForgeFile
+    data: CurseForgeFile
 }
 
 export type CurseForgeGetModFilesResponse = {
-    CurseForgedata: CurseForgeFile[]
-    CurseForgepagination: CurseForgePagination
+    data: CurseForgeFile[]
+    pagination: CurseForgePagination
 }
 
 export type CurseForgeGetModResponse = {
-    CurseForgedata: CurseForgeMod
+    data: CurseForgeMod
 }
 
 export type CurseForgeGetModsResponse = {
-    CurseForgedata: CurseForgeMod[]
+    data: CurseForgeMod[]
 }
 
 export type CurseForgeGetVersionTypesResponse = {
-    CurseForgedata: CurseForgeGameVersionType[]
+    data: CurseForgeGameVersionType[]
 }
 
 export type CurseForgeGetVersionsResponseV1 = {
-    CurseForgedata: CurseForgeGameVersionsByType[]
+    data: CurseForgeGameVersionsByType[]
 }
 
 export type CurseForgeGetVersionsResponseV2 = {
-    CurseForgedata: CurseForgeGameVersionsByType2[]
+    data: CurseForgeGameVersionsByType2[]
 }
 
 export type CurseForgeGetFeaturedModsRequestBody = {
-    CurseForgegameId: number
-    CurseForgeexcludedModIds: number[]
-    CurseForgegameVersionTypeId: number | null
+    gameId: number
+    excludedModIds: number[]
+    gameVersionTypeId: number | null
 }
 
 export type CurseForgeGetFingerprintMatchesRequestBody = {
-    CurseForgefingerprints: number[]
+    fingerprints: number[]
 }
 
 export type CurseForgeGetFuzzyMatchesRequestBody = {
-    CurseForgegameId: number
-    CurseForgefingerprints: CurseForgeFolderFingerprint[]
+    gameId: number
+    fingerprints: CurseForgeFolderFingerprint[]
 }
 
 export type CurseForgeGetModFilesRequestBody = {
-    CurseForgefileIds: number[]
+    fileIds: number[]
 }
 
 export type CurseForgeGetModsByIdsListRequestBody = {
-    CurseForgemodIds: number[]
-    CurseForgefilterPcOnly: boolean | null
+    modIds: number[]
+    filterPcOnly: boolean | null
 }
 
 export enum CurseForgeHashAlgo {
-    CurseForgeSha1 = 1,
-    CurseForgeMd5 = 2,
+    Sha1 = 1,
+    Md5 = 2,
 }
 
 export type CurseForgeMinecraftGameVersion = {
-    CurseForgeid: number
-    CurseForgegameVersionId: number
-    CurseForgeversionString: string
-    CurseForgejarDownloadUrl: string
-    CurseForgejsonDownloadUrl: string
-    CurseForgeapproved: boolean
-    CurseForgedateModified: string
-    CurseForgegameVersionTypeId: number
-    CurseForgegameVersionStatus: CurseForgeGameVersionStatus
-    CurseForgegameVersionTypeStatus: CurseForgeGameVersionTypeStatus
+    id: number
+    gameVersionId: number
+    versionString: string
+    jarDownloadUrl: string
+    jsonDownloadUrl: string
+    approved: boolean
+    dateModified: string
+    gameVersionTypeId: number
+    gameVersionStatus: CurseForgeGameVersionStatus
+    gameVersionTypeStatus: CurseForgeGameVersionTypeStatus
 }
 
 export type CurseForgeMinecraftModLoaderIndex = {
-    CurseForgename: string
-    CurseForgegameVersion: string
-    CurseForgelatest: boolean
-    CurseForgerecommended: boolean
-    CurseForgedateModified: string
-    CurseForgetype: CurseForgeModLoaderType
+    name: string
+    gameVersion: string
+    latest: boolean
+    recommended: boolean
+    dateModified: string
+    type: CurseForgeModLoaderType
 }
 
 export type CurseForgeMinecraftModLoaderVersion = {
-    CurseForgeid: number
-    CurseForgegameVersionId: number
-    CurseForgeminecraftGameVersionId: number
-    CurseForgeforgeVersion: string
-    CurseForgename: string
-    CurseForgetype: CurseForgeModLoaderType
-    CurseForgedownloadUrl: string
-    CurseForgefilename: string
-    CurseForgeinstallMethod: CurseForgeModLoaderInstallMethod
-    CurseForgelatest: boolean
-    CurseForgerecommended: boolean
-    CurseForgeapproved: boolean
-    CurseForgedateModified: string
-    CurseForgemavenVersionString: string
-    CurseForgeversionJson: string
-    CurseForgelibrariesInstallLocation: string
-    CurseForgeminecraftVersion: string
-    CurseForgeadditionalFilesJson: string
-    CurseForgemodLoaderGameVersionId: number
-    CurseForgemodLoaderGameVersionTypeId: number
-    CurseForgemodLoaderGameVersionStatus: CurseForgeGameVersionStatus
-    CurseForgemodLoaderGameVersionTypeStatus: CurseForgeGameVersionTypeStatus
-    CurseForgemcGameVersionId: number
-    CurseForgemcGameVersionTypeId: number
-    CurseForgemcGameVersionStatus: CurseForgeGameVersionStatus
-    CurseForgemcGameVersionTypeStatus: CurseForgeGameVersionTypeStatus
-    CurseForgeinstallProfileJson: string
+    id: number
+    gameVersionId: number
+    minecraftGameVersionId: number
+    forgeVersion: string
+    name: string
+    type: CurseForgeModLoaderType
+    downloadUrl: string
+    filename: string
+    installMethod: CurseForgeModLoaderInstallMethod
+    latest: boolean
+    recommended: boolean
+    approved: boolean
+    dateModified: string
+    mavenVersionString: string
+    versionJson: string
+    librariesInstallLocation: string
+    minecraftVersion: string
+    additionalFilesJson: string
+    modLoaderGameVersionId: number
+    modLoaderGameVersionTypeId: number
+    modLoaderGameVersionStatus: CurseForgeGameVersionStatus
+    modLoaderGameVersionTypeStatus: CurseForgeGameVersionTypeStatus
+    mcGameVersionId: number
+    mcGameVersionTypeId: number
+    mcGameVersionStatus: CurseForgeGameVersionStatus
+    mcGameVersionTypeStatus: CurseForgeGameVersionTypeStatus
+    installProfileJson: string
 }
 
 export type CurseForgeMod = {
-    CurseForgeid: number
-    CurseForgegameId: number
-    CurseForgename: string
-    CurseForgeslug: string
-    CurseForgelinks: CurseForgeModLinks
-    CurseForgesummary: string
-    CurseForgestatus: CurseForgeModStatus
-    CurseForgedownloadCount: number
-    CurseForgeisFeatured: boolean
-    CurseForgeprimaryCategoryId: number
-    CurseForgecategories: CurseForgeCategory[]
-    CurseForgeclassId: number | null
-    CurseForgeauthors: CurseForgeModAuthor[]
-    CurseForgelogo: CurseForgeModAsset
-    CurseForgescreenshots: CurseForgeModAsset[]
-    CurseForgemainFileId: number
-    CurseForgelatestFiles: CurseForgeFile[]
-    CurseForgelatestFilesIndexes: CurseForgeFileIndex[]
-    CurseForgelatestEarlyAccessFilesIndexes: CurseForgeFileIndex[]
-    CurseForgedateCreated: string
-    CurseForgedateModified: string
-    CurseForgedateReleased: string
-    CurseForgeallowModDistribution: boolean | null
-    CurseForgegamePopularityRank: number
-    CurseForgeisAvailable: boolean
-    CurseForgethumbsUpCount: number
-    CurseForgerating: number | null
+    id: number
+    gameId: number
+    name: string
+    slug: string
+    links: CurseForgeModLinks
+    summary: string
+    status: CurseForgeModStatus
+    downloadCount: number
+    isFeatured: boolean
+    primaryCategoryId: number
+    categories: CurseForgeCategory[]
+    classId: number | null
+    authors: CurseForgeModAuthor[]
+    logo: CurseForgeModAsset
+    screenshots: CurseForgeModAsset[]
+    mainFileId: number
+    latestFiles: CurseForgeFile[]
+    latestFilesIndexes: CurseForgeFileIndex[]
+    latestEarlyAccessFilesIndexes: CurseForgeFileIndex[]
+    dateCreated: string
+    dateModified: string
+    dateReleased: string
+    allowModDistribution: boolean | null
+    gamePopularityRank: number
+    isAvailable: boolean
+    thumbsUpCount: number
+    rating: number | null
 }
 
 export type CurseForgeModAsset = {
-    CurseForgeid: number
-    CurseForgemodId: number
-    CurseForgetitle: string
-    CurseForgedescription: string
-    CurseForgethumbnailUrl: string
-    CurseForgeurl: string
+    id: number
+    modId: number
+    title: string
+    description: string
+    thumbnailUrl: string
+    url: string
 }
 
 export type CurseForgeModAuthor = {
-    CurseForgeid: number
-    CurseForgename: string
-    CurseForgeurl: string
+    id: number
+    name: string
+    url: string
 }
 
 export type CurseForgeModLinks = {
-    CurseForgewebsiteUrl: string
-    CurseForgewikiUrl: string
-    CurseForgeissuesUrl: string
-    CurseForgesourceUrl: string
+    websiteUrl: string
+    wikiUrl: string
+    issuesUrl: string
+    sourceUrl: string
 }
 
 export enum CurseForgeModLoaderInstallMethod {
-    CurseForgeForgeInstaller = 1,
-    CurseForgeForgeJarInstall = 2,
-    CurseForgeForgeInstaller_v2 = 3,
+    ForgeInstaller = 1,
+    ForgeJarInstall = 2,
+    ForgeInstaller_v2 = 3,
 }
 
 export enum CurseForgeModLoaderType {
-    CurseForgeAny = 1,
-    CurseForgeForge = 2,
-    CurseForgeCauldron = 3,
-    CurseForgeLiteLoader = 4,
-    CurseForgeFabric = 5,
-    CurseForgeQuilt = 6,
-    CurseForgeNeoForge = 7,
+    Any = 1,
+    Forge = 2,
+    Cauldron = 3,
+    LiteLoader = 4,
+    Fabric = 5,
+    Quilt = 6,
+    NeoForge = 7,
 }
 
 export enum CurseForgeModsSearchSortField {
-    CurseForgeFeatured = 1,
-    CurseForgePopularity = 2,
-    CurseForgeLastUpdated = 3,
-    CurseForgeName = 4,
-    CurseForgeAuthor = 5,
-    CurseForgeTotalDownloads = 6,
-    CurseForgeCategory = 7,
-    CurseForgeGameVersion = 8,
-    CurseForgeEarlyAccess = 9,
-    CurseForgeFeaturedReleased = 10,
-    CurseForgeReleasedDate = 11,
-    CurseForgeRating = 12,
+    Featured = 1,
+    Popularity = 2,
+    LastUpdated = 3,
+    Name = 4,
+    Author = 5,
+    TotalDownloads = 6,
+    Category = 7,
+    GameVersion = 8,
+    EarlyAccess = 9,
+    FeaturedReleased = 10,
+    ReleasedDate = 11,
+    Rating = 12,
 }
 
 export enum CurseForgeModStatus {
-    CurseForgeNew = 1,
-    CurseForgeChangesRequired = 2,
-    CurseForgeUnderSoftReview = 3,
-    CurseForgeApproved = 4,
-    CurseForgeRejected = 5,
-    CurseForgeChangesMade = 6,
-    CurseForgeInactive = 7,
-    CurseForgeAbandoned = 8,
-    CurseForgeDeleted = 9,
-    CurseForgeUnderReview = 10,
+    New = 1,
+    ChangesRequired = 2,
+    UnderSoftReview = 3,
+    Approved = 4,
+    Rejected = 5,
+    ChangesMade = 6,
+    Inactive = 7,
+    Abandoned = 8,
+    Deleted = 9,
+    UnderReview = 10,
 }
 
 export type CurseForgePagination = {
-    CurseForgeindex: number
-    CurseForgepageSize: number
-    CurseForgeresultCount: number
-    CurseForgetotalCount: number
+    index: number
+    pageSize: number
+    resultCount: number
+    totalCount: number
 }
 
 export type CurseForgeSearchModsResponse = {
-    CurseForgedata: CurseForgeMod[]
-    CurseForgepagination: CurseForgePagination
+    data: CurseForgeMod[]
+    pagination: CurseForgePagination
 }
 
 export type CurseForgeSortableGameVersion = {
-    CurseForgegameVersionName: string
-    CurseForgegameVersionPadded: string
-    CurseForgegameVersion: string
-    CurseForgegameVersionReleaseDate: string
-    CurseForgegameVersionTypeId: number | null
+    gameVersionName: string
+    gameVersionPadded: string
+    gameVersion: string
+    gameVersionReleaseDate: string
+    gameVersionTypeId: number | null
 }
 
 export type CurseForgeStringResponse = {
-    CurseForgedata: string
+    data: string
 }
 ```

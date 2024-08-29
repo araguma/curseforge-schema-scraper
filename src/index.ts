@@ -84,13 +84,13 @@ async function main() {
         if (schema.type) {
             output += `export type ${prefix}${schema.name} = {\n`
             Object.entries(schema.type).forEach(([key, value]) => {
-                output += `    ${prefix}${key}: ${value.match(/^[A-Z]/) ? prefix : ''}${value}\n`
+                output += `    ${key}: ${value.match(/^[A-Z]/) ? prefix : ''}${value}\n`
             })
             output += '}\n\n'
         } else if (schema.enum) {
             output += `export enum ${prefix}${schema.name} {\n`
             schema.enum.forEach((key, index) => {
-                output += `    ${prefix}${key} = ${index + 1},\n`
+                output += `    ${key} = ${index + 1},\n`
             })
             output += '}\n\n'
         }
