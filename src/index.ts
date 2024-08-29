@@ -42,7 +42,7 @@ async function main() {
             const rows = innerText
                 .split('\n')
                 .filter((row) => {
-                    return !row.includes('=')
+                    return !row.match(/^\d = .*$/)
                 })
                 .map((row) => {
                     const columns = row.split('\t')
