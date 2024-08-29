@@ -9,6 +9,7 @@ export type Schema = {
 }
 
 const url = 'https://docs.curseforge.com/'
+const prefix = 'CurseForge'
 
 async function main() {
     const schemas: Schema[] = []
@@ -81,15 +82,15 @@ async function main() {
         assert(schema.name)
 
         if (schema.type) {
-            output += `export type ${schema.name} = {\n`
+            output += `export type ${prefix}${schema.name} = {\n`
             Object.entries(schema.type).forEach(([key, value]) => {
-                output += `    ${key}: ${value}\n`
+                output += `    ${prefix}${key}: ${value.match(/^[A-Z]/) ? prefix : ''}${value}\n`
             })
             output += '}\n\n'
         } else if (schema.enum) {
-            output += `export enum ${schema.name} {\n`
+            output += `export enum ${prefix}${schema.name} {\n`
             schema.enum.forEach((key, index) => {
-                output += `    ${key} = ${index + 1},\n`
+                output += `    ${prefix}${key} = ${index + 1},\n`
             })
             output += '}\n\n'
         }
