@@ -5,7 +5,10 @@ import { chromium } from 'playwright'
 export type Schema = {
     name?: string
     type?: Record<string, string>
-    enum?: string[]
+    enum?: {
+        key: string
+        value: string
+    }[]
 }
 
 const url = 'https://docs.curseforge.com/'
@@ -65,11 +68,14 @@ async function main() {
                 })
             schema.type = Object.fromEntries(rows)
         } else if (innerText.includes('=')) {
-            const key = innerText.split('=')[1]
+            const entry = innerText.split('=')
+            const key = entry[1]
+            const value = entry[0]
             assert(key)
+            assert(value)
 
             schema.enum = schema.enum ?? []
-            schema.enum.push(key)
+            schema.enum.push({ key: key, value: value })
         } else {
             schema = { name: innerText.replace(/-/g, '').replace(/ /g, '') }
             schemas.push(schema)
@@ -89,8 +95,8 @@ async function main() {
             output += '}\n\n'
         } else if (schema.enum) {
             output += `export enum ${prefix}${schema.name} {\n`
-            schema.enum.forEach((key, index) => {
-                output += `    ${key} = ${index + 1},\n`
+            schema.enum.forEach((entry) => {
+                output += `    ${entry.key} = ${entry.value},\n`
             })
             output += '}\n\n'
         }
