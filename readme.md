@@ -437,13 +437,13 @@ export enum CurseForgeModLoaderInstallMethod {
 }
 
 export enum CurseForgeModLoaderType {
-    Any = 1,
-    Forge = 2,
-    Cauldron = 3,
-    LiteLoader = 4,
-    Fabric = 5,
-    Quilt = 6,
-    NeoForge = 7,
+    Any = 0,
+    Forge = 1,
+    Cauldron = 2,
+    LiteLoader = 3,
+    Fabric = 4,
+    Quilt = 5,
+    NeoForge = 6,
 }
 
 export enum CurseForgeModsSearchSortField {
