@@ -1,6 +1,6 @@
 # Curseforge Schema Scraper
 
-Scrapes and converts schemas from https://docs.curseforge.com/ to TypeScript using PlayWright.
+Scrapes and converts schemas from https://docs.curseforge.com/rest-api/ to TypeScript using PlayWright.
 
 ## Usage
 

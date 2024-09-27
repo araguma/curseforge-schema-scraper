@@ -11,7 +11,7 @@ export type Schema = {
     }[]
 }
 
-const url = 'https://docs.curseforge.com/'
+const url = 'https://docs.curseforge.com/rest-api/'
 const prefix = 'CurseForge'
 
 async function main() {
